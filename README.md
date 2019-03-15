@@ -1,4 +1,4 @@
-# vue-flask-celery-docker
+# Flask Docker Vagrant
 Dockerized client-server application of Letters &amp; Numbers Game using Flask, Websockets, Celery and Vue. 
 
 # Stack
