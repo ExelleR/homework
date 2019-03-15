@@ -1,0 +1,4 @@
+.idea
+*.pyc
+frontend/README.md
+.vagrant
