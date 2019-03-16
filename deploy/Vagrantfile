@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
   # The most common configuration options are documented and commented below.
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
-  config.vm.define "numbersDeploy"
+  config.vm.define "challangeDeploy"
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
   # `vagrant box outdated`. This is not recommended.
   config.vm.box_check_update = false
 
-  config.vm.hostname = 'numbersDeploy'
+  config.vm.hostname = 'challangeDeploy'
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -78,7 +78,7 @@ Vagrant.configure("2") do |config|
     # ansible.inventory_path = ""
     ansible.playbook = "ansible/playbook.yml" 
     ansible.groups = {
-      "local" => ["numbersDeploy"]  # con default, se coloca el nombre por defecto de la maquina
+      "local" => ["challangeDeploy"]  # con default, se coloca el nombre por defecto de la maquina
     }
 #     ansible.tags = ["countdown"] # esto es para ejecutar tags especificos del playbook de ansible
   end

@@ -48,8 +48,8 @@ One of the advantages of deploying the services in docker, is the ease with whic
 
 ```bash
 /deploy$ vagrant ssh # enter to virtual machine (this command is executed on the host machine)
-ubuntu@numbersDeploy:~$  cd /opt
-ubuntu@numbersDeploy:~$ sudo docker-compose up -d --scale flaskserver=4 --scale frontend=2 --scale socketio=4 # we are scaling the api rest server 4 times, nginx server (frontend) 2 times, and socketio server 4 times in a round-robin fashion.
+ubuntu@challangeDeploy:~$  cd /opt
+ubuntu@challangeDeploy:~$ sudo docker-compose up -d --scale flaskserver=4 --scale frontend=2 --scale socketio=4 # we are scaling the api rest server 4 times, nginx server (frontend) 2 times, and socketio server 4 times in a round-robin fashion.
 ```
 If you go to `192.168.33.20:8080` and see the Traeffik Dashboard, you will see in the backends part, the 10 new services!
 
