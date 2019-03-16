@@ -60,6 +60,4 @@ If you go to `192.168.33.20:8080` and see the Traeffik Dashboard, you will see i
   <img src="./img/dashboard.png" width="90%">
 </p>
 
-# TO DO
-- Implementing *letters* part.
-# homework
+
