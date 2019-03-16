@@ -1,16 +1,16 @@
-from gevent.monkey import patch_all
+# from gevent.monkey import patch_all
 
-from backend.src.server.tasks import CeleryTask
-from gevent.pywsgi import WSGIServer
-from backend.src.server.flask_inits import app, celery, FLASK_SERVER_PORT
+# from backend.src.server.tasks import CeleryTask
+# from gevent.pywsgi import WSGIServer
+# from backend.src.server.flask_inits import app, celery, FLASK_SERVER_PORT
 
-from backend.src.server.async_api import CountdownAsyncAPI
-from backend.src.server.sync_api import CountdownSyncAPI
+# from backend.src.server.async_api import CountdownAsyncAPI
+# from backend.src.server.sync_api import CountdownSyncAPI
 
-from flask import jsonify
-from flask_cors import CORS
+# from flask import jsonify
+# from flask_cors import CORS
 from flask import Flask, request
-patch_all()
+# patch_all()
 
 # # Instance and register celery task
 # celery_tasks = CeleryTask()
@@ -34,12 +34,13 @@ patch_all()
 #     return jsonify({'msg': 'This resource does not exist'}), 404
 
 
-if __name__ == '__main__':
-    w = WSGIServer(('0.0.0.0', FLASK_SERVER_PORT), app)
-    try:
-        w.serve_forever()
-    except KeyboardInterrupt:
-        w.stop(timeout=10)
+# if __name__ == '__main__':
+#     w = WSGIServer(('0.0.0.0', FLASK_SERVER_PORT), app)
+#     try:
+#         w.serve_forever()
+#     except KeyboardInterrupt:
+#         w.stop(timeout=10)
+app = Flask(__name__)
 
 
 @app.route('/hello')

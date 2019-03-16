@@ -9,7 +9,7 @@ class CountdownAsyncAPI(Blueprint):
         self._config = None
         super(CountdownAsyncAPI, self).__init__(name, import_name, *args)
 
-        @self.route('/numbers_async', methods=['GET'])
+        @self.route('/numbers_async', methods=['POST'])
         def solver_async():
             data = request.get_json(silent=True)
 
@@ -36,7 +36,7 @@ class CountdownAsyncAPI(Blueprint):
                     }
 
             code = ret.pop('code')
-            return request.host
+            return jsonify(ret['msg']), code
 
         # Polling of celery tasks
         @self.route('/progress/<task_id>', methods=['GET'])
