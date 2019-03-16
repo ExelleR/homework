@@ -62,6 +62,8 @@ services:
     context: .
     dockerfile: ./flask_socketio_server/Dockerfile
    restart: always
+   ports:
+      - 8000:8000
    labels:
     - "traefik.enable=true"
     - "traefik.backend=flasksocketio"
