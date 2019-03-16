@@ -9,34 +9,9 @@ class CountdownAsyncAPI(Blueprint):
         self._config = None
         super(CountdownAsyncAPI, self).__init__(name, import_name, *args)
 
-        @self.route('/numbers_async', methods=['POST'])
-        def solver_async():
-            data = request.get_json(silent=True)
-
-            if data is None:
-                ret = {
-                    'msg': 'Data must be encoded in a JSON object!',
-                    'code': 422
-                }
-            else:
-                numbers = data.get('numbers')
-                target = data.get('target')
-                client_id = data.get('id')
-
-                try:
-                    job = self._celery_task.delay(numbers, target, client_id, self._config['SOCKETIO_BROKER_URL'])
-                    ret = {
-                        'msg': str(job.id),
-                        'code': 201
-                    }
-                except OperationalError as e:
-                    ret = {
-                        'msg': e.message,
-                        'code': 503
-                    }
-
-            code = ret.pop('code')
-            return jsonify(ret['msg']), code
+        @self.route('/numbers_async', methods=['GET'])
+        
+            return request.host
 
         # Polling of celery tasks
         @self.route('/progress/<task_id>', methods=['GET'])
