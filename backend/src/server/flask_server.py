@@ -48,9 +48,16 @@
 from flask import Flask, request
 app = Flask(__name__)
 
-@app.route("/gethostname")
+@app.route("/getHostName")
 def hello():
     return request.host
+
+
+@app.route("/getTime")
+def getTime():
+    print("browser time: ", request.args.get("time"))
+    print("server time : ", time.strftime('%A %B, %d %Y %H:%M:%S'));
+    return "Done"    
 
 if __name__ == "__main__":
     # Only for debugging while developing
