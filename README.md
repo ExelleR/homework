@@ -20,7 +20,7 @@ Dockerized client-server application of Letters &amp; Numbers Game using Flask, 
 The image shows the proposed architecture. The architecture expose several public endopoints:
 - `flaskserver.docker` &rarr; This is the main entry point to the REST API.
 - `frontend.docker` &rarr; This is the main entry point to the Frontend Web.
-- `flasksocketio.docker` &rarr; This is the main entry point to the websocket subsystem.
+- `flasksocketio.docker` &rarr; This is the main entry point to the websocket subsystem.  ----> This was removed 
 - `192.168.33.20:8080` &rarr; This is the entry point to the Traeffik Dashboard, where you can see which services have been deployed.
 
 Besides these endpoints, there are other private endpoints that are not accessible from outside the docker's internal network, like redis or celery.
