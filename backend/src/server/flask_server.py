@@ -34,12 +34,12 @@ from flask import Flask, request
 #     return jsonify({'msg': 'This resource does not exist'}), 404
 
 
-# if __name__ == '__main__':
-#     w = WSGIServer(('0.0.0.0', FLASK_SERVER_PORT), app)
-#     try:
-#         w.serve_forever()
-#     except KeyboardInterrupt:
-#         w.stop(timeout=10)
+if __name__ == '__main__':
+    w = WSGIServer(('0.0.0.0', FLASK_SERVER_PORT), app)
+    try:
+        w.serve_forever()
+    except KeyboardInterrupt:
+        w.stop(timeout=10)
 app = Flask(__name__)
 
 

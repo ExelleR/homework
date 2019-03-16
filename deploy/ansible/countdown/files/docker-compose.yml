@@ -27,6 +27,8 @@ services:
       context: .
       dockerfile: ./flask_server/Dockerfile
     restart: always
+    ports:
+      - 8888:8888
     labels:
     - "traefik.enable=true"
     - "traefik.backend=flaskserver"
