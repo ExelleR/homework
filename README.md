@@ -1,5 +1,5 @@
 # Flask Docker Vagrant
-Dockerized client-server application of Letters &amp; Numbers Game using Flask, Websockets, Celery and Vue. 
+
 
 # Stack
 - **Vagrant & Ansible** for cloud deployment (on a VirtualBox machine).
