@@ -41,21 +41,7 @@ Endpoints exposed by traeffik require a domain name, so the IP address of the ma
 ```bash
 - 192.168.33.20 flaskserver.docker frontend.docker flasksocketio.docker
 ```
-Once you have configured hosts, open Firefox or Chrome/Chromium browser and type on a tab/window: `http://frontend.docker`. If all went well, you should see the following image:
 
-<p align="center">
-  <img src="./img/frontpage.png" width="90%">
-</p>
-
-Thus, if you press the *numbers* button, you will be redirected to this view:
-
-<p align="center">
-  <img src="./img/mainview.png" width="90%">
-</p>
-
-In this view, you can input numbers to search for the target number and send the request to the server, which will respond in one of the following ways:
-- If websocket service is **on**, then will send a json message through websockets to the client.
-- If websocket service is **off**, then the client will request to the server the result through http (only one request, no polling).
 
 ## Scaling services
 One of the advantages of deploying the services in docker, is the ease with which we can scale them. To do this, enter the following commands on a terminal: 
