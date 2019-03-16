@@ -7,13 +7,9 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    
     {
       path: '/',
-      name: 'FrontPage',
-      component: FrontPage
-    },
-    {
-      path: '/numbers_solver',
       component: NumbersPage,
       name: 'Numbers',
       beforeEnter: function (to, from, next) {
