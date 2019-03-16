@@ -62,7 +62,7 @@ class GetTime(Resource):
     def get(self):
         return {'Time': time.strftime('%A %B, %d %Y %H:%M:%S')}
 
-api.add_resource(GetHostName, '/getTime')
+api.add_resource(GetTime, '/getTime')
 
 
 # @app.route("/getHostName")
