@@ -4,7 +4,6 @@
 # Stack
 - **Vagrant & Ansible** for cloud deployment (on a VirtualBox machine).
 - **Flask** to build the REST API (with GEvent to allow async requests).
-- **Celery** to delegate the execution of heavy tasks, with redis backend (solution of numbers part).
 - **Flask-SocketIO** to notify the client ASAP of the solution with no polling (with GEvent to allow async requests).
 - **Vue** to build the frontend (with Vue-Router, Vuex, Vue-socketio, axios, i18n, etc).
   - Multilanguage support: english and spanish.
