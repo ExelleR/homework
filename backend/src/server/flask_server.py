@@ -13,26 +13,30 @@ from flask_cors import CORS
 from flask import Flask, request
 
 
-# Instance and register celery task
-celery_tasks = CeleryTask()
-celery.register_task(celery_tasks)
+# # Instance and register celery task
+# celery_tasks = CeleryTask()
+# celery.register_task(celery_tasks)
 
-# Import blueprints
-sync_api = CountdownSyncAPI('sync_api', __name__)
-async_api = CountdownAsyncAPI('async_api', __name__, celery=celery_tasks)
+# # Import blueprints
+# sync_api = CountdownSyncAPI('sync_api', __name__)
+# async_api = CountdownAsyncAPI('async_api', __name__, celery=celery_tasks)
 
-# Apply CORS on every blueprint
-CORS(sync_api)
-CORS(async_api)
+# # Apply CORS on every blueprint
+# CORS(sync_api)
+# CORS(async_api)
 
-# Register blueprints
-app.register_blueprint(sync_api)
-app.register_blueprint(async_api)
+# # Register blueprints
+# app.register_blueprint(sync_api)
+# app.register_blueprint(async_api)
 
 
-@app.errorhandler(404)
-def resource_not_found(error):
-    return jsonify({'msg': 'This resource does not exist'}), 404
+# @app.errorhandler(404)
+# def resource_not_found(error):
+#     return jsonify({'msg': 'This resource does not exist'}), 404
+
+@app.route('/hello')
+def hello():
+    return "Hello World!"
 
 if __name__ == '__main__':
     w = WSGIServer(('0.0.0.0', FLASK_SERVER_PORT), app)
@@ -41,6 +45,3 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         w.stop(timeout=10)
 
-@app.route('/hello')
-def hello():
-    return "Hello World!"

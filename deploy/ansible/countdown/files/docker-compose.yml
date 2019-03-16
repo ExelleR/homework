@@ -70,7 +70,6 @@ services:
     - redis
     - celery
 
-    services:
   portainer:
     image: portainer/portainer
     command: -H unix:///var/run/docker.sock
