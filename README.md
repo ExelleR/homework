@@ -43,7 +43,7 @@ Endpoints exposed by traeffik require a domain name, so the IP address of the ma
 ```
 # REST API
 
-- To see Time just : ```curl http://flaskserver.docker:8888/getTime```
+- To see Time : ```curl http://flaskserver.docker:8888/getTime```
 - To the Hostname : ```curl http://flaskserver.docker:8888/getHostName```
 
 ## Scaling services
