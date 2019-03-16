@@ -11,14 +11,14 @@ import 'jquery/dist/jquery.min'
 import 'popper.js/dist/popper.min'
 import 'bootstrap/dist/js/bootstrap.min'
 import NumbersPage from './components/NumbersPage.vue'
-import FrontPage from './components/FrontPage.vue'
+// import FrontPage from './components/FrontPage.vue'
 import store from './store'
 
 export default {
   name: 'App',
   components: {
     NumbersPage,
-    FrontPage
+    // FrontPage
   },
   mounted: function () {
     if (!store.state.lang) {
@@ -28,7 +28,7 @@ export default {
 }
 </script>
 
-<style>
+<!-- <style>
   @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
   @import url('https://fonts.googleapis.com/css?family=Special+Elite|Dancing+Script|Coming+Soon|Cabin+Sketch|Londrina+Sketch');
   #app {
@@ -64,4 +64,4 @@ export default {
   input[type=number] {
     -moz-appearance:textfield;
   }
-</style>
+</style> -->
