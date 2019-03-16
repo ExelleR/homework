@@ -45,19 +45,56 @@
 # def hello_world():
 #     return 'Hello, World!'
 
-from flask import Flask, request
+from flask import Flask
+from flask_restful import Resource, Api
 import time
 app = Flask(__name__)
-
-@app.route("/getHostName")
-def hello():
-    return request.host
+api = Api(app)
 
 
-@app.route("/getTime")
-def getTime():
-    return time.strftime('%A %B, %d %Y %H:%M:%S');  
+class GetHostName(Resource):
+    def get(self):
+        return {'HostName': request.host}
+
+api.add_resource(GetHostName, '/getHostName')
+
+class GetTime(Resource):
+    def get(self):
+        return {'Time': time.strftime('%A %B, %d %Y %H:%M:%S')}
+
+api.add_resource(GetHostName, '/getTime')
+
+
+# @app.route("/getHostName")
+# def getHostName():
+#     return request.host
+
+
+# @app.route("/getTime")
+# def getTime():
+#     return time.strftime('%A %B, %d %Y %H:%M:%S');  
 
 if __name__ == "__main__":
     # Only for debugging while developing
     app.run(host='0.0.0.0', debug=True, port=8888)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
