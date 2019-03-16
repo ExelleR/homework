@@ -41,8 +41,6 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         w.stop(timeout=10)
 
-
-
-@app.route('/gethostname')
-
+@app.route('/')
+def hello_world():
     return request.host_url
