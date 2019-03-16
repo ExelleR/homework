@@ -1,5 +1,4 @@
 from gevent.monkey import patch_all
-patch_all()
 
 from backend.src.server.tasks import CeleryTask
 from gevent.pywsgi import WSGIServer
@@ -11,7 +10,7 @@ from backend.src.server.sync_api import CountdownSyncAPI
 from flask import jsonify
 from flask_cors import CORS
 from flask import Flask, request
-
+patch_all()
 
 # # Instance and register celery task
 # celery_tasks = CeleryTask()
@@ -34,9 +33,6 @@ from flask import Flask, request
 # def resource_not_found(error):
 #     return jsonify({'msg': 'This resource does not exist'}), 404
 
-@app.route('/hello')
-def hello():
-    return "Hello World!"
 
 if __name__ == '__main__':
     w = WSGIServer(('0.0.0.0', FLASK_SERVER_PORT), app)
@@ -45,3 +41,8 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         w.stop(timeout=10)
 
+
+@app.route('/hello')
+def hello():
+    return "Hello World!"
+    
