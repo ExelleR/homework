@@ -44,8 +44,7 @@
 # @app.route('/hello')
 # def hello_world():
 #     return 'Hello, World!'
-
-from flask import Flask
+from flask import Flask, request
 from flask_restful import Resource, Api
 import time
 app = Flask(__name__)
