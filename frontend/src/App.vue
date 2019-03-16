@@ -17,7 +17,7 @@ import store from './store'
 export default {
   name: 'App',
   components: {
-    NumbersPage,
+    // NumbersPage,
     // FrontPage
   },
   mounted: function () {
