@@ -23,18 +23,12 @@ export default {
     submitForm: function (e) {
       this.$validator.validateAll().then(response => {
         if (response && this.api_response.allow_send) {
-          this.clear_only_solution()
-          let data = {
-            numbers: this.inputs.numbers,
-            target: this.inputs.target,
-            id: this.me
-          }
-          this.$http.post('/numbers_async', data).then((response) => {
+          
+          this.$http.get('/numbers_async', data).then((response) => {
             this.api_response.response = response.data
             this.api_response.allow_send = false
-            if (this.numbers_solution.solution.length === 0 && !this.me) {
-              this.manual_fetching_data() // only call if we don't have one solution yet
-            }
+            console.log(this.api_response.response);
+            
           }).catch((error) => {
             console.log(error)
             this.api_response.has_errors = true
