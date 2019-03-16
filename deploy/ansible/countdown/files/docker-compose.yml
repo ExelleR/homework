@@ -13,14 +13,14 @@ services:
     labels:
       - "traefik.enable=false"
 
-  celery:
-    build:
-      context: .
-      dockerfile: ./celery/Dockerfile
-    command: celery -A backend.src.server.flask_server.celery worker --loglevel=info
-    restart: always
-    depends_on:
-     - redis
+  # celery:
+  #   build:
+  #     context: .
+  #     dockerfile: ./celery/Dockerfile
+  #   command: celery -A backend.src.server.flask_server.celery worker --loglevel=info
+  #   restart: always
+  #   depends_on:
+  #    - redis
 
   flaskserver:
     build:
@@ -37,12 +37,12 @@ services:
     depends_on:
      - celery
 
-  redis:
-    image: redis:alpine
-    container_name: redis
-    labels:
-     - "traefik.enable=false"
-    restart: always
+  # redis:
+  #   image: redis:alpine
+  #   container_name: redis
+  #   labels:
+  #    - "traefik.enable=false"
+  #   restart: always
 
   frontend:
     build:
