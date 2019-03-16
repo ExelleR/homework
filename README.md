@@ -41,7 +41,10 @@ Endpoints exposed by traeffik require a domain name, so the IP address of the ma
 ```bash
 - 192.168.33.20 flaskserver.docker frontend.docker flasksocketio.docker
 ```
+# REST API
 
+- To see Time : ```curl http://flaskserver.docker:8888/getTime```
+- To the Hostname : ```curl http://flaskserver.docker:8888/getHostName```
 
 ## Scaling services
 One of the advantages of deploying the services in docker, is the ease with which we can scale them. To do this, enter the following commands on a terminal: 
@@ -57,6 +60,4 @@ If you go to `192.168.33.20:8080` and see the Traeffik Dashboard, you will see i
   <img src="./img/dashboard.png" width="90%">
 </p>
 
-# TO DO
-- Implementing *letters* part.
-# homework
+
