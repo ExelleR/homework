@@ -56,9 +56,7 @@ def hello():
 
 @app.route("/getTime")
 def getTime():
-    print("browser time: ", request.args.get("time"))
-    print("server time : ", time.strftime('%A %B, %d %Y %H:%M:%S'));
-    return "Done"    
+    return time.strftime('%A %B, %d %Y %H:%M:%S');  
 
 if __name__ == "__main__":
     # Only for debugging while developing
